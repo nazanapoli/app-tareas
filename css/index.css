@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
+}
+body {
+  background-color: black;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main {
+  background-color: #58788c;
+  margin: 1rem 0;
+  border-radius: 16px;
+}
+.containerInput {
+  max-width: 900px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.contLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contLabel input,
+.contLabel select {
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+.divTareas,
+.contLabel input,
+.contLabel select {
+  cursor: pointer;
+}
+.contenedorKanban {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+}
+.contenedorTareas {
+  width: 50%;
+}
+.boxPendientes {
+  border-left: 4px solid black;
+}
+h3 {
+  text-align: center;
+  border-bottom: 4px solid black;
+  font-family: 'Secular One', sans-serif;
+}
+.bodyCard {
+  display: grid;
+  grid-template-areas:
+    'eliminar title siguiente'
+    'prioridad categoria categoria';
+  height: 5rem;
+}
+.divPng {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+.msj {
+    text-align: center;
+    font-weight: bold;
+}
+.containerBtn {
+  display: flex;
+  justify-content: end;
+}
+.btnEliminar {
+  border: none;
+  border-radius: 10px;
+  background-color: brown;
+  color: #fff;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+.btnEliminar:hover {
+  cursor: pointer;
+}
+.eliminar {
+  grid-area: eliminar;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  margin: 0.1rem 40%;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  background: #a52a2a;
+  box-shadow: inset 5px 5px 15px #421111, inset -5px -5px 15px #ff4343;
+}
+.siguiente {
+  grid-area: siguiente;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  margin: 0.1rem 40%;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  background: #8fbc8f;
+  box-shadow: inset 5px 5px 15px #394b39, inset -5px -5px 15px #e5ffe5;
+}
+.eliminarEP {
+  grid-area: eliminar;
+}
+.siguienteEP {
+  grid-area: siguiente;
+}
+/* DIV DE TAREAS */
+.divTareas {
+  background-color: beige;
+  border-radius: 10px;
+  margin: 1rem;
+}
+.title {
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to left, beige 0%, #c4c1c8 50%, beige 100%) 1;
+  padding: 5px;
+  grid-area: title;
+  height: 50%;
+}
+.titleEP {
+  text-decoration: line-through;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to left, beige 0%, #c4c1c8 50%, beige 100%) 1;
+  padding: 5px;
+  grid-area: title;
+  height: 50%;
+}
+/* DIVS PRIORIDAD */
+.contenedorPri,
+.contenedorCat {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+/* PRIORIDAD */
+.prioridadEP {
+  width: 55%;
+  background: linear-gradient(to right, black, rgb(10, 10, 10) 50%, black);
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+  color: lightgray;
+  text-decoration: line-through;
+}
+.prioridadAlta {
+  width: 55%;
+  background: linear-gradient(to right, brown, rgb(130, 42, 42) 50%, brown);
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+  color: lightgray;
+}
+.prioridadMedia {
+  width: 75%;
+  background: linear-gradient(
+    to right,
+    darksalmon,
+    rgb(193, 150, 122) 50%,
+    darksalmon
+  );
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+}
+.prioridadBaja {
+  width: 55%;
+  background: linear-gradient(to right, seagreen, rgb(36, 119, 67), seagreen);
+  border-radius: 10px;
+  height: 20px;
+  grid-area: prioridad;
+  text-align: center;
+  color: lightgray;
+}
+/* CATEGORIA */
+.categoriaEP {
+  width: 55%;
+  background: linear-gradient(to right, black, rgb(10, 10, 10) 50%, black);
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+  color: lightgray;
+  text-decoration: line-through;
+}
+.catTrabajo {
+  width: 55%;
+  background: linear-gradient(
+    to right,
+    hotpink,
+    rgb(215, 105, 180) 50%,
+    hotpink
+  );
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+}
+.catCasa {
+  width: 55%;
+  background: linear-gradient(
+    to right,
+    steelblue,
+    rgb(70, 120, 150) 50%,
+    steelblue
+  );
+  border-radius: 10px;
+  grid-area: prioridad;
+  text-align: center;
+}
+.catOtro {
+  width: 55%;
+  background: linear-gradient(
+    to right,
+    lightgray,
+    rgb(171, 171, 171) 50%,
+    lightgray
+  );
+  border-radius: 10px;
+  height: 20px;
+  grid-area: prioridad;
+  text-align: center;
+}
+/* BTN AGREGAR TAREA */
+.css-button-gradient--2 {
+  min-width: 130px;
+  height: 70%;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, rgb(95, 199, 140) 0%, seagreen 75%);
+}
+.css-button-gradient--2:hover {
+  background-position: right center;
+}
+.css-button-gradient--2:active {
+  top: 2px;
+}
+/* BOTON BORRAR TODO */
+.css-button-gradient--8 {
+  min-width: 130px;
+  height: 70%;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #dc2430 0%, #7f141b 75%);
+  font-weight: bold;
+  margin: 0.5rem;
+}
+.css-button-gradient--8:hover {
+  background-position: right center;
+}
+.css-button-gradient--8:active {
+  top: 2px;
+}
+.centrado {
+  text-align: center;
+}
