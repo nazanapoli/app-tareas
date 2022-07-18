@@ -27,7 +27,7 @@ if(JSON.parse(localStorage.getItem('nombre'))?.length>=1){
         } else {
         let nombre = value
         localStorage.setItem('nombre',JSON.stringify(nombre))
-        if(horaActual.getHours()>6&&horaActual.getHours()<18){
+        if(horaActual.getHours()>6&&horaActual.getHours()<19){
             saludo.innerText=`¡Hola ${nombre} 🌞!`
         } else {
             saludo.innerText=`¡Hola ${nombre} 🌚!`
@@ -181,12 +181,27 @@ btnAgregar.addEventListener('click',()=>{
         let nuevaTarea = inputAgregar.value
         let nuevaCategoria = categoriaAgregar.value
         let nuevaPrioridad = prioridadAgregar.value
-        id++
-        tareasPorHacer.push([nuevaTarea,nuevaCategoria,nuevaPrioridad,id])
-        cargaDeTareas(tareasPorHacer,porHacer,'POR HACER')
-        if(JSON.parse(localStorage.getItem('tareasEnProgresoLS'))!=null){
-            cargaEP(enProgreso,cargaDeTareas(tareasPorHacer,porHacer,'POR HACER'))
+        if(nuevaTarea==null||nuevaTarea.trim()){
+            id++
+            tareasPorHacer.push([nuevaTarea,nuevaCategoria,nuevaPrioridad,id])
+            cargaDeTareas(tareasPorHacer,porHacer,'POR HACER')
+            if(JSON.parse(localStorage.getItem('tareasEnProgresoLS'))!=null){
+                cargaEP(enProgreso,cargaDeTareas(tareasPorHacer,porHacer,'POR HACER'))
+            }
+            let tareasPorHacerLS = localStorage.setItem('tareasPorHacerLS',JSON.stringify(tareasPorHacer))
+            inputAgregar.value='';
+        } else {
+            Toastify({
+                text: `Olvidaste asignarle un nombre a la tarea 😅`,
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to left, #dc2430, #7f141b)",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
         }
-        let tareasPorHacerLS = localStorage.setItem('tareasPorHacerLS',JSON.stringify(tareasPorHacer))
-        inputAgregar.value='';
 })
